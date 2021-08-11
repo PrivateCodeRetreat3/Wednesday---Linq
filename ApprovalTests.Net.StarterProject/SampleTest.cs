@@ -42,12 +42,14 @@ namespace ApprovalTests.Net.StarterProject
 
         private IEnumerable<Point> AdvanceTurn(Point[] board)
         {
-            IEnumerable<IGrouping<Point, Point>> counts = board.SelectMany(p => GetNeighbours(p)).GroupBy(p => p);
-            var alive = counts.Where(g => g.Count() == 3 || (g.Count() == 2 && board.Contains(g.Key))).Select(g => g.Key);
-            return alive;
+            return board
+                .SelectMany(p => GetNeighbors(p))
+                .GroupBy(p => p)
+                .Where(g => g.Count() == 3 || (g.Count() == 2 && board.Contains(g.Key)))
+                .Select(g => g.Key);
         }
 
-        private IEnumerable<Point> GetNeighbours(Point point)
+        private IEnumerable<Point> GetNeighbors(Point point)
         {
             yield return new Point(point.X - 1, point.Y - 1);
             yield return new Point(point.X - 0, point.Y - 1); 
