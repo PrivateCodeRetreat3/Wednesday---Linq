@@ -53,12 +53,12 @@ namespace ApprovalTests.Net.StarterProject
         {
             yield return new Point(point.X - 1, point.Y - 1);
             yield return new Point(point.X - 0, point.Y - 1); 
-            yield return new Point(point.X + 1 , point.Y - 1); 
+            yield return new Point(point.X + 1, point.Y - 1); 
             yield return new Point(point.X - 1, point.Y - 0);
-            yield return new Point(point.X + 1 , point.Y - 0);
+            yield return new Point(point.X + 1, point.Y - 0);
             yield return new Point(point.X - 1, point.Y + 1);
             yield return new Point(point.X - 0, point.Y + 1); 
-            yield return new Point(point.X + 1 , point.Y + 1); 
+            yield return new Point(point.X + 1, point.Y + 1); 
 
         }
     }
